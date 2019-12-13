@@ -1,1 +1,11 @@
-module.exports = (env) => require('./webpack/index')(env);
+// module.exports = (env) => require('./webpack/index')(env);
+
+const path = require("path");
+
+module.exports = {
+	entry: "./src/index.js",
+	output: {
+		path: path.join(__dirname, "/dist"),
+		filename: "index_bundle.js"
+	}
+};
