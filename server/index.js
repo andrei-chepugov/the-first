@@ -14,5 +14,5 @@ routes(app);
 
 app.use(express.static('./build'));
 app.listen(PORT, () => {
-	console.log(`SSR running on port ${PORT}`)
+	console.log(`http://localhost:${PORT}`)
 });
