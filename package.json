@@ -10,7 +10,7 @@
     "start": "node index.js",
     "start:nodemon": "nodemon index.js",
     "webpack:watch": "webpack --mode development --watch",
-    "webpack:node:watch": "webpack --config webpack.config.node.js --mode development --watch",
+    "webpack:node:watch": "webpack --config webpack.config.node.js --env.target=node --mode development --watch",
     "build1": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
