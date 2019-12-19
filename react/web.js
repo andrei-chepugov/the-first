@@ -2,16 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import { Provider } from 'react-redux';
-import { BrowserRoute } from "react-router";
+import { BrowserRouter } from "react-router-dom";
 
 import Routes from "./routes";
 import configureStore from './store/configureStore'
 
 const app = (url, context, store) =>
 	<Provider store={store}>
-		<BrowserRoute context={context}>
+		<BrowserRouter context={context}>
 			<Routes />
-		</BrowserRoute>
+		</BrowserRouter>
 	</Provider >
 
 export function render(url, context, rootSelectore) {
@@ -19,7 +19,8 @@ export function render(url, context, rootSelectore) {
 	const App = app(url, context, store);
 	return ReactDOM.render(App, document.querySelector(rootSelectore))
 }
-export function render(url, context, rootSelectore) {
+
+export function hydrates(url, context, rootSelectore) {
 	const store = configureStore(context);
 	const App = app(url, context, store);
 	return ReactDOM.hydrate(App, document.querySelector(rootSelectore))

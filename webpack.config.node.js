@@ -1,12 +1,11 @@
-// module.exports = (env) => require('./webpack/index')(env);
 const config = require("config");
 const path = require("path");
 
 const {webpack: {source}} = config;
 
-
-module.exports = function (env = {}) {
+module.exports = function (env = {}, argv) {
 	const { target } = env;
+	const { mode } = argv;
 
 	return ({
 		entry: `./${source}/${target}.js`,
@@ -15,7 +14,8 @@ module.exports = function (env = {}) {
 			filename: `./${target}.js`,
 			libraryTarget: 'commonjs'
 		},
-		target: 'node',
+		target,
+		mode,
 		module: {
 			rules: [
 				{

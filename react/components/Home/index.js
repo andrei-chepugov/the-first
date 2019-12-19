@@ -5,10 +5,27 @@ import PropTypes from 'prop-types'
 class Component extends React.Component {
     constructor() {
         super();
+        this.state = {
+            date: new Date()
+        }
     }
-    render () {
+
+    componentDidMount() {
+        this.timer = setInterval(() => {
+            this.setState({ date: new Date() })
+        }, 999)
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timer);
+    }
+
+    render() {
         return (
-            <div>HOME</div>
+            <main>
+                <h1>HOME</h1>
+                {this.state.date.toISOString()}
+            </main>
         );
     }
 }

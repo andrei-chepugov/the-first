@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "webpack": "webpack --env.target=${WEBPACK_TARGET} --env.mode=${WEBPACK_MODE} --progress",
+    "webpack": "webpack --env.target=${WEBPACK_TARGET} --mode=${WEBPACK_MODE} --progress",
     "webpack:web": "WEBPACK_TARGET=web WEBPACK_MODE=${NODE_ENV} npm run webpack",
     "webpack:node": "WEBPACK_TARGET=node WEBPACK_MODE=${NODE_ENV} npm run webpack",
     "webpack:all": "echo \"webpack:web webpack:node\" | xargs -t -P2 -n1 npm run",
@@ -10,8 +10,8 @@
     "start": "node index.js",
     "start:nodemon": "nodemon index.js",
     "webpack:watch": "webpack --mode development --watch",
-    "webpack:node:watch": "webpack --config webpack.config.node.js --env.target=node --mode development --watch",
-    "build1": "webpack --mode production",
+    "webpack:web:watch": "webpack --config webpack.config.web.js --env.target=web --mode=development --watch",
+    "webpack:node:watch": "webpack --config webpack.config.node.js --env.target=node --mode=development --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

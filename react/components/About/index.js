@@ -6,9 +6,12 @@ class Component extends React.Component {
     constructor() {
         super();
     }
-    render () {
+    render() {
         return (
-            <div>ABOUT</div>
+            <main>
+                <h1>ABOUT</h1>
+            </main>
+
         );
     }
 }

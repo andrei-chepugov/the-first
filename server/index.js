@@ -6,7 +6,7 @@ app.use(express.Router());
 
 require('./routes')(app, require('../dist/node.js'));
 
-app.use(express.static('./build'));
+app.use(express.static('./dist'));
 app.listen(PORT, () => {
 	console.log(`http://localhost:${PORT}`)
 });
