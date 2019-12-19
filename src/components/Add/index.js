@@ -1,6 +1,7 @@
 import React from 'react';
-import './index.css';
 import PropTypes from 'prop-types'
+
+import './index.css';
 
 class Add extends React.Component {
     constructor() {

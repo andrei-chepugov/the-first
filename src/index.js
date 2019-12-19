@@ -2,12 +2,21 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
+import { render } from 'react-dom'
 
-console.log('asfasdfadsf');
+import { Provider } from 'react-redux'
+import { store } from './store/configureStore'
 
 ReactDOM.render(
-	<App/>,
-	document.querySelector('#app')
+	<Provider store={store}>
+		<Router history={browserHistory}>
+			<Route path='/' component={App}>
+				<IndexRoute component={App} />
+				<Route path='admin' component={App} />
+				<Route path='genre' component={App} />
+			</Route>
+		</Router>,
+  	</Provider>,
+	document.querySelector( '#app' )
 );
+

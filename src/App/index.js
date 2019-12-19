@@ -1,10 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import Add from '../components/Add';
 import News from '../components/News';
 
 import './index.css';
+
+import { setYear } from '../store/actions/PageActions'
+
 
 import myNews from './myNews';
 
@@ -30,4 +34,22 @@ class App extends React.Component {
   }
 }
 
-export default App;
+// export default App;
+
+const mapStateToProps = store => {
+  return {
+    user: store.user,
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setYearAction: year => dispatch(setYear(year)),
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App)
+
