@@ -3,11 +3,13 @@
 const path = require("path");
 
 module.exports = {
-	entry: "./src/index.js",
+	entry: "./src/index.node.js",
 	output: {
 		path: path.join(__dirname, "/dist"),
-		filename: "./main.js"
+		filename: "./server.js",
+		libraryTarget: 'commonjs'
 	},
+	target: 'node',
 	module: {
 	rules: [
 		{
@@ -20,7 +22,7 @@ module.exports = {
 		{
 		  test: /\.css$/,
 		  use: [
-			"style-loader",
+			"node-style-loader",
 			{
 			  loader: "css-loader",
 			  options: {
