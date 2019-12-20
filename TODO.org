@@ -1,0 +1,13 @@
+* webpack
+** rework config
+** add plugins from vue and dom-react
+** add helmet
+** hot reload 
+
+* babel
+** move config to webpack
+** remove babelrc
+
+* Docker
+** create config
+** sort package json dependensies sections 
