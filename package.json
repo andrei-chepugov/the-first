@@ -1,4 +1,8 @@
 {
+  "name": "react-demo",
+  "version": "0.0.0",
+  "description": "skeleton react project with ssr",
+  "keywords": ["react", "ssr", "webpack", "node", "express"],
   "scripts": {
     "webpack": "webpack --env.target=${WEBPACK_TARGET} --mode=${WEBPACK_MODE} --progress",
     "webpack:web": "WEBPACK_TARGET=web WEBPACK_MODE=${NODE_ENV} npm run webpack",
@@ -47,8 +51,6 @@
     "css-loader": "^3.3.2",
     "file-loader": "^5.0.2",
     "intersection-observer": "^0.7.0",
-    "moment": "^2.24.0",
-    "moment-locales-webpack-plugin": "^1.1.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-loader": "^2.4.6",
