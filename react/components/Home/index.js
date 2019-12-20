@@ -6,7 +6,7 @@ class Component extends React.Component {
     constructor() {
         super();
         this.state = {
-            date: new Date()
+            date: new Date(0)
         }
     }
 

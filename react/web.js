@@ -20,10 +20,10 @@ export function render(url, context, rootSelectore) {
 	return ReactDOM.render(App, document.querySelector(rootSelectore))
 }
 
-export function hydrates(url, context, rootSelectore) {
+export function hydrate(url, context, rootSelector) {
 	const store = configureStore(context);
 	const App = app(url, context, store);
-	return ReactDOM.hydrate(App, document.querySelector(rootSelectore))
+	return ReactDOM.hydrate(App, document.querySelector(rootSelector))
 }
 
 export default hydrate;

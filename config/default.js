@@ -11,11 +11,9 @@ module.exports = {
 		__webpack_hmr: '__webpack_hmr',
 		heartbeat: 3000,
 		source: 'react',
-		bundles: {
-			cache: 'build/.cache',
-			web: 'build/web',
-			node: 'build/node'
-		}
+		output: 'build',
 	},
-
+	server: {
+		port: 8080,
+	}
 };
